@@ -93,7 +93,8 @@ const Banner = () => {
                             <div className="flex flex-wrap">
                                 <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">
                                     <div className="flex lg:py-12 mx-4">
-                                        <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/13606"></iframe>
+                                        <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/91405"></iframe>
+
                                     </div>
                                 </div>
 
