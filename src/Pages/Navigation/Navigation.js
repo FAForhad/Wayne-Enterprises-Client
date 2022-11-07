@@ -4,7 +4,7 @@ const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
 
-        <div style={{ backgroundColor: 'hsla(169, 100%, 9%, 1)', zIndex: '10' }}>
+        <div className='' style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
             <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div class="relative flex items-center justify-between">
                     <a
@@ -107,8 +107,8 @@ const Navigation = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div class="absolute top-0 left-0 w-full">
-                                <div class="p-5 bg-white border rounded shadow-sm">
+                            <div class="absolute top-0 left-0 w-full ">
+                                <div class="p-5 border rounded shadow-sm" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
                                     <div class="flex items-center justify-between mb-4">
                                         <div>
                                             <a
@@ -132,8 +132,8 @@ const Navigation = () => {
                                                     <rect x="14" y="1" width="7" height="6" />
                                                     <rect x="14" y="11" width="7" height="12" />
                                                 </svg>
-                                                <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    Company
+                                                <span class="ml-2 text-xl font-bold tracking-wide text-teal-300 uppercase">
+                                                    WAYNE ENTERPRISES
                                                 </span>
                                             </a>
                                         </div>
@@ -160,7 +160,7 @@ const Navigation = () => {
                                                     href="/"
                                                     aria-label="Our product"
                                                     title="Our product"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     Product
                                                 </a>
@@ -170,7 +170,7 @@ const Navigation = () => {
                                                     href="/"
                                                     aria-label="Our product"
                                                     title="Our product"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     Features
                                                 </a>
@@ -180,7 +180,7 @@ const Navigation = () => {
                                                     href="/"
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     Pricing
                                                 </a>
@@ -190,7 +190,7 @@ const Navigation = () => {
                                                     href="/"
                                                     aria-label="About us"
                                                     title="About us"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     About us
                                                 </a>

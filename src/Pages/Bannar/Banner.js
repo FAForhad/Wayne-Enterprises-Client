@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
             <section >
-                <div className='rounded p-1' style={{ backgroundColor: 'hsla(169, 100%, 9%, 1)', zIndex: '10' }} offset="1">
+                <div className='rounded p-1' style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)', zIndex: '10' }} offset="1">
                 </div>
                 <svg
                     className="absolute block w-full"
@@ -21,8 +21,8 @@ const Banner = () => {
                             y1="0"
                             y2="0"
                         >
-                            <stop stopColor="hsla(169, 100%, 9%, 1)" offset="0"></stop>
-                            <stop stopColor="hsla(169, 100%, 9%, 1)" offset="1"></stop>
+                            <stop stopColor="hsla(181, 100%, 7%, 1)" offset="0"></stop>
+                            <stop stopColor="hsla(181, 100%, 7%, 1)" offset="1"></stop>
                         </linearGradient>
                         <path d="" fill="url(#lg-0.047955344060927496)" opacity="0.4">
                             <animate
@@ -88,10 +88,10 @@ const Banner = () => {
                 </svg>
 
                 <div className="container mx-auto px-6 md:px-12 xl:px-32">
-                    <div className="container my-24 px-6 mx-auto">
-                        <section className="mb-32">
+                    <div className="container lg:my-24 px-6 mx-auto">
+                        <section className="lg:mb-32">
                             <div className="flex flex-wrap">
-                                <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">
+                                <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:mb-0">
                                     <div className="flex lg:py-12 mx-4">
                                         <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/91405"></iframe>
 
@@ -100,9 +100,9 @@ const Banner = () => {
 
                                 <div className="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
                                     <div
-                                        className=" h-full rounded-lg p-6 lg:pl-12 text-white flex items-center text-center lg:text-left">
+                                        className=" h-full rounded-lg p-2 lg:pl-12 text-white flex items-center text-center lg:text-left">
                                         <div className="lg:pl-12">
-                                            <h2 className="text-7xl text-teal-400 font-bold mb-6">Your Personal<span className='text-6xl text-gray-300'> Business Coach</span> </h2>
+                                            <h2 className="lg:text-7xl md:text-5xl text-5xl text-teal-400 font-bold mb-6">Your Personal<span className='lg:text-6xl md:text-4xl text-4xl text-gray-300'> Business Coach</span> </h2>
                                             <p className="mb-6 pb-2 lg:pb-0">
                                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, sint, repellat
                                                 vel quo quisquam accusamus in qui at ipsa enim quibusdam illo laboriosam omnis.
