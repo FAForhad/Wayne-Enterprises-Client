@@ -1,8 +1,64 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { SlSocialGoogle } from 'react-icons/sl';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 
 const SignIn = () => {
+    const [errors, setError] = useState('')
+    const { signInUser, googleLogin } = useContext(Authcontext)
+    console.log(signInUser, googleLogin)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const handleSignIn = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const from = location?.state?.from?.pathname || '/'
+        console.log(email, password)
+        signInUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                form.reset()
+                setError('')
+
+                toast.success('Successfully Sign In!', {
+                    style: {
+                        border: '1px solid #713200',
+                        padding: '16px',
+                        color: '#713200',
+                    },
+                    iconTheme: {
+                        primary: '#713200',
+                        secondary: '#FFFAEE',
+                    },
+                });
+                navigate(from, { replace: true } || '/')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
+
+    const handleGoogleSignin = () => {
+        const from = location?.state?.from?.pathname || '/'
+        googleLogin()
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true } || '/')
+                toast.success('Login Successful')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
+
     return (
         <div>
 
@@ -15,15 +71,17 @@ const SignIn = () => {
                         </p>
                     </div>
 
-                    <form action="" className="mx-auto mt-8 mb-0 max-w-md space-y-4">
+                    <form onSubmit={handleSignIn} className="mx-auto mt-8 mb-0 max-w-md space-y-4">
                         <div>
-                            <label for="email" className="sr-only">Email</label>
+                            <label type="email" className="sr-only">Email</label>
 
                             <div className="relative">
                                 <input
+                                    name='email'
                                     type="email"
                                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                     placeholder="Enter email"
+
                                 />
 
                                 <span className="absolute inset-y-0 right-4 inline-flex items-center">
@@ -46,9 +104,10 @@ const SignIn = () => {
                         </div>
 
                         <div>
-                            <label for="password" className="sr-only">Password</label>
+                            <label type="password" className="sr-only">Password</label>
                             <div className="relative">
                                 <input
+                                    name='password'
                                     type="password"
                                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                     placeholder="Enter password"
@@ -86,6 +145,7 @@ const SignIn = () => {
                             </p>
 
                             <button
+                                type='submit'
                                 className="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
 
                             >
@@ -114,9 +174,11 @@ const SignIn = () => {
                             </button>
                         </div>
                     </form>
+                    <p className='text-red-500'>{errors}</p>
                     <hr className='w-96 mx-auto my-4' />
                     <div>
                         <button
+                            onClick={handleGoogleSignin}
                             className="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
 
                         >

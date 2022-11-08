@@ -7,6 +7,7 @@ import Detailspage from '../../Pages/DetailsPgae/Detailspage';
 import Home from '../../Pages/Home/Home';
 import SignIn from '../../Pages/Signin/SignIn';
 import Signup from '../../Pages/SignUp/Signup';
+import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 
 const Routes = () => {
     const router = createBrowserRouter([
@@ -20,7 +21,7 @@ const Routes = () => {
                 },
                 {
                     path: '/services',
-                    element: <Allservices></Allservices>
+                    element: <PrivateRoute> <Allservices></Allservices></PrivateRoute>
                 },
                 {
                     path: '/signin',

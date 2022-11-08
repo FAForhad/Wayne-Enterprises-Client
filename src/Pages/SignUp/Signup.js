@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { SlSocialGoogle } from 'react-icons/sl';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 
 const Signup = () => {
-
+    const [error, setError] = useState('')
     const { register, updateUserProfile, googleLogin } = useContext(Authcontext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -15,11 +17,14 @@ const Signup = () => {
         const photo = form.photo.value
         const email = form.email.value
         const password = form.password.value
+        const from = location?.state?.from?.pathname || '/'
         register(email, password)
             .then(result => {
                 const user = result.user
+                console.log(user)
                 handleupdateUser(name, photo)
                 form.reset()
+                setError('')
                 toast.success('Successfully Sign Up!', {
                     style: {
                         border: '1px solid #713200',
@@ -31,20 +36,10 @@ const Signup = () => {
                         secondary: '#FFFAEE',
                     },
                 });
-
+                navigate(from, { replace: true } || '/')
             })
             .catch(error => {
-                toast.error(error, {
-                    style: {
-                        border: '1px solid #713200',
-                        padding: '16px',
-                        color: '#713200',
-                    },
-                    iconTheme: {
-                        primary: '#713200',
-                        secondary: '#FFFAEE',
-                    },
-                });
+                setError(error.message)
             })
     }
 
@@ -60,7 +55,17 @@ const Signup = () => {
 
 
     const handleGoogleLogin = () => {
+        const from = location?.state?.from?.pathname || '/'
         googleLogin()
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true } || '/')
+                toast.success('Login Successful')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
     }
     return (
         <div >
@@ -77,7 +82,7 @@ const Signup = () => {
                         onSubmit={handleSignUp}
                         className="mx-auto mt-8 mb-0 max-w-md space-y-4">
                         <div>
-                            <label for="name" className="sr-only">Name</label>
+                            <label type="name" className="sr-only">Name</label>
 
                             <div className="relative">
                                 <input
@@ -90,7 +95,7 @@ const Signup = () => {
                         </div>
 
                         <div>
-                            <label for="photo" className="sr-only">Photo URL</label>
+                            <label type="photo" className="sr-only">Photo URL</label>
                             <div className="relative">
                                 <input
                                     name='photo'
@@ -101,7 +106,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div>
-                            <label for="Email" className="sr-only">Email</label>
+                            <label type="Email" className="sr-only">Email</label>
                             <div className="relative">
                                 <input
                                     name='email'
@@ -112,7 +117,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div>
-                            <label for="password" className="sr-only">Password</label>
+                            <label type="password" className="sr-only">Password</label>
                             <div className="relative">
                                 <input
                                     name='password'
@@ -159,6 +164,7 @@ const Signup = () => {
                             </button>
                         </div>
                     </form>
+                    <p className='text-red-500'>{error}</p>
                     <hr className='w-96 mx-auto my-4' />
                     <div>
                         <button
