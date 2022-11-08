@@ -9,7 +9,7 @@ const Service = ({ service }) => {
 
         <div class="mb-12 lg:mb-0">
             <div class="shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover mb-6 rounded-bl-3xl rounded-tr-3xl"
-                style={{ backgroundPosition: '50%' }} data-mdb-ripple="true" data-mdb-ripple-color="light">
+                style={{ backgroundPosition: '50%' }} data-mdb-ripple="true" data-mdb-ripple-color="dark">
                 <img src={picture} class="w-full h-64  rounded-bl-3xl rounded-tr-3xl" />
                 <a href="#!">
                     <div
