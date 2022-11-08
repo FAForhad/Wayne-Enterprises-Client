@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { SlChart } from "react-icons/sl";
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { user } = useContext(Authcontext);
+    console.log(user)
     return (
 
         <div className='' style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
@@ -17,7 +21,7 @@ const Navigation = () => {
                     >
                         <SlChart></SlChart>
                         <span className="ml-2 text-xl font-bold tracking-wide text-teal-300 uppercase">
-                            WAYNE ENTERPRISES
+                            WAYNE
                         </span>
                     </a>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -121,7 +125,7 @@ const Navigation = () => {
                                                     <rect x="14" y="11" width="7" height="12" />
                                                 </svg>
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-teal-300 uppercase">
-                                                    WAYNE ENTERPRISES
+                                                    WAYNE
                                                 </span>
                                             </a>
                                         </div>

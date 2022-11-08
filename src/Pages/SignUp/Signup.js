@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { SlSocialGoogle } from 'react-icons/sl';
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 
 const Signup = () => {
+
+    const { user, register, updateUserProfile } = useContext(Authcontext)
+
+    const handleSignUp = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value
+        const photo = form.photo.value
+        const email = form.email.value
+        const password = form.password.value
+        register(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                handleupdateUser(name, photo)
+                form.reset()
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleupdateUser = (name, picture) => {
+        const profile = {
+            displayName: name,
+            photoURL: picture
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     return (
         <div >
             <section class="relative flex flex-wrap lg:h-screen lg:items-center">
@@ -14,15 +45,18 @@ const Signup = () => {
                         </p>
                     </div>
 
-                    <form action="" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+                    <form
+                        onSubmit={handleSignUp}
+                        class="mx-auto mt-8 mb-0 max-w-md space-y-4">
                         <div>
-                            <label for="email" class="sr-only">Email</label>
+                            <label for="name" class="sr-only">Name</label>
 
                             <div class="relative">
                                 <input
-                                    type="email"
+                                    name='name'
+                                    type="name"
                                     class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                    placeholder="Enter email"
+                                    placeholder="Enter Your name"
                                 />
 
                                 <span class="absolute inset-y-0 right-4 inline-flex items-center">
@@ -45,9 +79,78 @@ const Signup = () => {
                         </div>
 
                         <div>
+                            <label for="photo" class="sr-only">Photo URL</label>
+                            <div class="relative">
+                                <input
+                                    name='photo'
+                                    type="photo"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Enter Photo URL"
+                                />
+
+                                <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                        />
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                        />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="Email" class="sr-only">Email</label>
+                            <div class="relative">
+                                <input
+                                    name='email'
+                                    type="email"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Enter email"
+                                />
+
+                                <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                        />
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                        />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
                             <label for="password" class="sr-only">Password</label>
                             <div class="relative">
                                 <input
+                                    name='password'
                                     type="password"
                                     class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                     placeholder="Enter password"
@@ -81,10 +184,11 @@ const Signup = () => {
                         <div class="flex items-center justify-between">
                             <p class="text-sm text-gray-500">
                                 Allready have account ?
-                                <Link to='/signin' class="underline"> Sign In</Link>
+                                <Link to='/signin' class="underline text-gray-50"> Sign In</Link>
                             </p>
 
                             <button
+                                type='submit'
                                 class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
 
                             >

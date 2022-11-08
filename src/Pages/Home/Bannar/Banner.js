@@ -102,7 +102,7 @@ const Banner = () => {
                                     <div
                                         className=" h-full rounded-lg p-2 lg:pl-12 text-white flex items-center text-center lg:text-left">
                                         <div className="lg:pl-12">
-                                            <h2 className="lg:text-6xl md:text-4xl text-4xl font-bold mb-6 text-gray-300"> Your  <span className='lg:text-8xl md:text-7xl text-teal-400 text-5xl '> Business Coach</span> </h2>
+                                            <h2 className="lg:text-6xl md:text-4xl text-4xl font-bold mb-6 text-gray-300"> Your Personal <span className='lg:text-8xl md:text-7xl text-teal-400 text-5xl '> Business Coach</span> </h2>
                                             <p className="mb-6 pb-2 lg:pb-0">
                                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, sint, repellat
                                                 vel quo quisquam accusamus in qui at ipsa enim quibusdam illo laboriosam omnis.

@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import 'tw-elements';
 import reportWebVitals from './reportWebVitals';
+import Usercontexts from './Contexts/Usercontexts/Usercontexts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Usercontexts>
+      <App />
+    </Usercontexts>
   </React.StrictMode>
 );
 
