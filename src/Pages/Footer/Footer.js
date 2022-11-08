@@ -1,4 +1,5 @@
 import React from 'react';
+import { SlChart } from 'react-icons/sl';
 
 const Footer = () => {
     return (
@@ -114,7 +115,7 @@ const Footer = () => {
 
                         <div className="pt-16 pb-8 lg:pt-24 lg:pr-12">
                             <div className="hidden text-teal-300 lg:flex">
-                                <p className='text-3xl'>WAYNE ENTERPRISES</p>
+                                <p className='text-3xl flex font-bold'><SlChart className='mx-2'></SlChart> WAYNE ENTERPRISES</p>
                             </div>
 
                             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:mt-12">

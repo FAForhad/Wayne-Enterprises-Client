@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { SlChart } from "react-icons/sl";
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,23 +13,9 @@ const Navigation = () => {
                         href="/"
                         aria-label="Company"
                         title="WAYNE"
-                        className="inline-flex items-center"
+                        className="inline-flex items-center  text-4xl font-bold tracking-wide text-teal-300"
                     >
-                        <svg
-                            className="w-8 text-teal-accent-400"
-                            viewBox="0 0 24 24"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeMiterlimit="10"
-                            stroke="currentColor"
-                            fill="none"
-                        >
-                            <rect x="3" y="1" width="7" height="12" />
-                            <rect x="3" y="17" width="7" height="6" />
-                            <rect x="14" y="1" width="7" height="6" />
-                            <rect x="14" y="11" width="7" height="12" />
-                        </svg>
+                        <SlChart></SlChart>
                         <span className="ml-2 text-xl font-bold tracking-wide text-teal-300 uppercase">
                             WAYNE ENTERPRISES
                         </span>
@@ -74,14 +62,14 @@ const Navigation = () => {
                             </a>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/signin"
                                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-teal-400 hover:text-teal-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
-                                Sign up
-                            </a>
+                                Sign In
+                            </Link>
                         </li>
                     </ul>
                     <div className="lg:hidden">
