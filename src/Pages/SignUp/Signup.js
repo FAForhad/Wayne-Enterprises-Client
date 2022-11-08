@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { SlSocialGoogle } from 'react-icons/sl';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 
 const Signup = () => {
 
-    const { user, register, updateUserProfile } = useContext(Authcontext)
+    const { user, register, updateUserProfile, googleLogin } = useContext(Authcontext)
 
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -20,8 +21,32 @@ const Signup = () => {
                 console.log(user)
                 handleupdateUser(name, photo)
                 form.reset()
+                toast.success('Successfully Sign Up!', {
+                    style: {
+                        border: '1px solid #713200',
+                        padding: '16px',
+                        color: '#713200',
+                    },
+                    iconTheme: {
+                        primary: '#713200',
+                        secondary: '#FFFAEE',
+                    },
+                });
+
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                toast.error(error, {
+                    style: {
+                        border: '1px solid #713200',
+                        padding: '16px',
+                        color: '#713200',
+                    },
+                    iconTheme: {
+                        primary: '#713200',
+                        secondary: '#FFFAEE',
+                    },
+                });
+            })
     }
 
     const handleupdateUser = (name, picture) => {
@@ -34,6 +59,10 @@ const Signup = () => {
             .catch(error => console.log(error))
     }
 
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+    }
     return (
         <div >
             <section class="relative flex flex-wrap lg:h-screen lg:items-center">
@@ -220,6 +249,7 @@ const Signup = () => {
                     <hr className='w-96 mx-auto my-4' />
                     <div>
                         <button
+                            onClick={handleGoogleLogin}
                             class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
 
                         >
