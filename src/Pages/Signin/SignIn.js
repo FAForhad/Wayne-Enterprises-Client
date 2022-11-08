@@ -1,17 +1,17 @@
 import React from 'react';
+import { SlSocialGoogle } from 'react-icons/sl';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
     return (
         <div>
 
             <section class="relative flex flex-wrap lg:h-screen lg:items-center">
-                <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+                <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/3 lg:px-8 lg:py-24">
                     <div class="mx-auto max-w-lg text-center">
-                        <h1 class="text-2xl font-bold sm:text-3xl">Get started today!</h1>
 
-                        <p class="mt-4 text-gray-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
-                            eaque error neque ipsa culpa autem, at itaque nostrum!
+                        <p class="mt-4 text-7xl font-bold text-gray-400">
+                            Sign In
                         </p>
                     </div>
 
@@ -81,21 +81,62 @@ const SignIn = () => {
 
                         <div class="flex items-center justify-between">
                             <p class="text-sm text-gray-500">
-                                No account?
-                                <a href="#" class="underline">Sign up</a>
+                                No account ?
+                                <Link to='/signup' class="underline"> Sign up</Link>
                             </p>
 
                             <button
-                                type="submit"
-                                class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                                class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
+
                             >
-                                Sign in
+                                <span
+                                    class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+                                >
+                                    <svg
+                                        class="h-5 w-5"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                        />
+                                    </svg>
+                                </span>
+
+                                <span class="text-sm font-medium transition-all group-hover:ml-4">
+                                    Sign In
+                                </span>
                             </button>
                         </div>
                     </form>
+                    <hr className='w-96 mx-auto my-4' />
+                    <div>
+                        <button
+                            class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
+
+                        >
+                            <span
+                                class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+                            >
+                                <SlSocialGoogle></SlSocialGoogle>
+                            </span>
+
+                            <span class="text-sm font-medium transition-all group-hover:ml-4">
+                                Sign In Google
+                            </span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)', zIndex: '10' }}>
+                <div class="relative hidden lg:block md:hdden h-64 w-full sm:h-96 lg:h-full lg:w-2/3" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)', zIndex: '10' }}>
+                    <div className=" map-container absolute md:top-56 md:left-52 lg:top-56 lg:left-72">
+                        <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/92809"></iframe>
+                    </div>
 
                 </div>
             </section>

@@ -3,7 +3,7 @@ import { SlChart } from 'react-icons/sl';
 
 const Footer = () => {
     return (
-        <div className="relative mt-16 " style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
+        <div className="relative" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
 
             <footer aria-label="Site Footer">
                 <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">

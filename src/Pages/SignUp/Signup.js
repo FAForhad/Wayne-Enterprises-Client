@@ -1,80 +1,142 @@
 import React from 'react';
+import { SlSocialGoogle } from 'react-icons/sl';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     return (
-        <div className="container my-24 px-6 mx-auto">
-            <section className="mb-32 text-gray-800 text-center">
-                <div className="px-6 py-12 md:px-12">
-                    <div className="container mx-auto xl:px-32">
-                        <div className="grid lg:grid-cols-2 flex items-center">
-                            <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
-                                <div
-                                    className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
-                                >
-                                    <h2 className="text-3xl font-bold mb-12 text-white">Sign Up</h2>
-                                    <form onSubmit={'handleRgister'}>
-                                        <div className="form-group mb-6">
-                                            <input
-                                                type="text"
-                                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleInput7"
-                                                placeholder="Name"
-                                                name='name'
-                                            />
-                                        </div>
-                                        <div className="form-group mb-6">
-                                            <input
-                                                type="email"
-                                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleInput8"
-                                                placeholder="Email address"
-                                                name='email'
-                                            />
-                                        </div>
-                                        <div className="form-group mb-6">
-                                            <input
-                                                type="text"
-                                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleInput7"
-                                                placeholder="Photo URL"
-                                                name='photo'
-                                            />
-                                        </div>
-                                        <div className="form-group mb-6">
-                                            <input
-                                                type="text"
-                                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleInput7"
-                                                placeholder="Place Your Favorite Color (#A21E0C)"
+        <div >
+            <section class="relative flex flex-wrap lg:h-screen lg:items-center">
+                <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/3 lg:px-8 lg:py-24">
+                    <div class="mx-auto max-w-lg text-center">
 
-                                                name='color'
-                                            />
-                                        </div>
-                                        <div className="form-group mb-6">
-                                            <input
-                                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleFormControlTextarea13"
-                                                rows="3"
-                                                placeholder="Password"
-                                                name='password'
-                                            ></input>
-                                        </div>
-                                        <button
-                                            type="submit"
-                                            className="w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                                        >
-                                            SignUp
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div className="md:mb-12 lg:mb-0">
-                                <div className="map-container relative shadow-lg rounded-lg">
-                                    <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/92809"></iframe>
-                                </div>
+                        <p class="mt-4 text-7xl font-bold text-gray-400">
+                            Sign Up
+                        </p>
+                    </div>
+
+                    <form action="" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+
+                            <div class="relative">
+                                <input
+                                    type="email"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Enter email"
+                                />
+
+                                <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                        />
+                                    </svg>
+                                </span>
                             </div>
                         </div>
+
+                        <div>
+                            <label for="password" class="sr-only">Password</label>
+                            <div class="relative">
+                                <input
+                                    type="password"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Enter password"
+                                />
+
+                                <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                        />
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                        />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-500">
+                                Allready have account ?
+                                <Link to='/signin' class="underline"> Sign In</Link>
+                            </p>
+
+                            <button
+                                class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
+
+                            >
+                                <span
+                                    class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+                                >
+                                    <svg
+                                        class="h-5 w-5"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                        />
+                                    </svg>
+                                </span>
+
+                                <span class="text-sm font-medium transition-all group-hover:ml-4">
+                                    Sign up
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                    <hr className='w-96 mx-auto my-4' />
+                    <div>
+                        <button
+                            class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
+
+                        >
+                            <span
+                                class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+                            >
+                                <SlSocialGoogle></SlSocialGoogle>
+                            </span>
+
+                            <span class="text-sm font-medium transition-all group-hover:ml-4">
+                                Sign In Google
+                            </span>
+                        </button>
                     </div>
+                </div>
+
+                <div class="relative hidden lg:block md:hdden h-64 w-full sm:h-96 lg:h-full lg:w-2/3" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)', zIndex: '10' }}>
+                    <div className=" map-container absolute md:top-56 md:left-52 lg:top-56 lg:left-72">
+                        <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/92809"></iframe>
+                    </div>
+
                 </div>
             </section>
         </div>
