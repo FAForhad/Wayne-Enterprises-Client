@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Error from '../../Layouts/Error/error';
 import Main from '../../Layouts/Main/Main';
 import Allservices from '../../Pages/Allservices/Allservices';
 import Detailspage from '../../Pages/DetailsPgae/Detailspage';
@@ -35,6 +36,10 @@ const Routes = () => {
                     loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
                 }
             ]
+        },
+        {
+            path: '*',
+            element: <Error></Error>
         }
     ])
     return (

@@ -6,16 +6,21 @@ import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const { user } = useContext(Authcontext);
-    console.log(user?.photoURL)
+    const { user, logout } = useContext(Authcontext);
+    console.log(user)
+    const handleSignout = () => {
+        logout()
+            .then(() => { })
+            .then(error => console.error(error))
+    }
     return (
 
         <div className='' style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex items-center justify-between">
-                    <a
-                        href="/"
-                        aria-label="Company"
+                    <Link
+                        to="/"
+                        aria-label="wayne"
                         title="WAYNE"
                         className="inline-flex items-center  text-4xl font-bold tracking-wide text-teal-300"
                     >
@@ -23,64 +28,72 @@ const Navigation = () => {
                         <span className="ml-2 text-xl font-bold tracking-wide text-teal-300 uppercase">
                             WAYNE
                         </span>
-                    </a>
+                    </Link>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/"
-                                aria-label="Our product"
-                                title="Our product"
-                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Product
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Our product"
-                                title="Our product"
-                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Features
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Product pricing"
-                                title="Product pricing"
-                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Pricing
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="About us"
-                                title="About us"
-                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                About us
-                            </a>
-                        </li>
-                        <li>
                             <Link
-                                to="/signin"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-teal-400 hover:text-teal-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Sign up"
+                                to="/services"
+                                aria-label="Our product"
+                                title="Our product"
+                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                                Sign In
+                                All Services
                             </Link>
                         </li>
                         <li>
-                            <div>
-                                <img className="self-center flex-shrink-0 w-12 h-12 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src={user?.photoURL} alt={user?.displayName} />
-                            </div>
+                            <Link
+                                to="/blogs"
+                                aria-label="Our product"
+                                title="Our product"
+                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
+                            >
+                                Blogs
+                            </Link>
                         </li>
+                        {
+                            !user?.uid ?
 
+                                <>
+                                    <li>
+                                        <Link
+                                            to="/signup"
+                                            className="inline-flex items-center justify-center h-12 px-2 font-medium tracking-wide text-teal-400 hover:text-teal-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                            aria-label="Sign up"
+                                            title="Sign up"
+                                        >
+                                            Sign Up
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/signin"
+                                            className="inline-flex items-center justify-center h-12 px-2 font-medium tracking-wide text-teal-400 hover:text-teal-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                            aria-label="Sign up"
+                                            title="Sign up"
+                                        >
+                                            Sign In
+                                        </Link>
+                                    </li>
+                                </>
+                                :
+                                <>
+                                    <li>
+                                        <button
+                                            onClick={handleSignout}
+                                            className="inline-flex items-center justify-center h-12 px-2 font-medium tracking-wide text-teal-400 hover:text-teal-700 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                            aria-label="Sign up"
+                                            title="Sign up"
+                                        >
+                                            Sign Out
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img className="self-center flex-shrink-0 w-12 h-12 mt-2 bg-center bg-cover rounded-full dark:bg-gray-500" src={user?.photoURL} alt={user?.displayName} />
+                                        </div>
+                                    </li>
+                                </>
+                        }
                     </ul>
                     <div className="lg:hidden">
                         <button

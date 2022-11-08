@@ -10,8 +10,8 @@ const Detailspage = () => {
     return (
         <div>
 
-            <section class="flex flex-wrap lg:h-screen lg:items-center">
-                <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-3/5 lg:px-8" >
+            <section className="flex flex-wrap lg:h-screen lg:items-center">
+                <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-3/5 lg:px-8" >
 
                     <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
                         <div className="mx-auto sm:text-center lg:max-w-2xl">
@@ -56,9 +56,9 @@ const Detailspage = () => {
                                 />
                             </div>
                             <div className='flex items-center justify-between'>
-                                <div class="mb-3 text-red-600 font-medium text-lg flex items-center justify-center lg:justify-start">
+                                <div className="mb-3 text-red-600 font-medium text-lg flex items-center justify-center lg:justify-start">
                                     <p>Rating : </p>
-                                    <svg class="w-4 h-4 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <svg className="w-4 h-4 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                         <path fill="currentColor"
                                             d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z" />
                                     </svg> <AiTwotoneStar></AiTwotoneStar> {rating}
@@ -73,7 +73,7 @@ const Detailspage = () => {
                         </div>
                     </div>
                 </div>
-                <div class=" w-full h-full lg:w-2/5" style={{ backgroundImage: `${details.picture}` }}>
+                <div className=" w-full h-full lg:w-2/5" style={{ backgroundImage: `${details.picture}` }}>
 
                 </div>
             </section>
