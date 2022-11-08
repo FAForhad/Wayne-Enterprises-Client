@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
+import BarLoader from "react-spinners/BarLoader";
 
-const PrivateRoute = () => {
-    return (
-        <div>
+const PrivateRoute = ({ children }) => {
+    const { user, loading } = useContext(Authcontext)
+    if (loading) {
+        return <BarLoader
+            color="#36d7b7"
+            speedMultiplier={0}
+        />
+    }
 
-        </div>
-    );
+    if (user) {
+        return children;
+    }
+
 };
 
 export default PrivateRoute;

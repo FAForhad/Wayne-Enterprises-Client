@@ -1,9 +1,10 @@
 import React from 'react';
 import { GoArrowSmallRight } from "react-icons/go";
 import { AiTwotoneStar } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { name, picture, price, rating, description } = service
+    const { _id, name, picture, price, rating, description } = service
     return (
 
         <div class="mb-12 lg:mb-0">
@@ -29,7 +30,8 @@ const Service = ({ service }) => {
                     description.length > 100 ? description.slice(0, 100) + '...' : description
                 }
             </p>
-            <a
+            <Link
+                to={`/services/${_id}`}
                 class="group relative inline-flex items-center overflow-hidden rounded border border-current my-1 px-8 py-3 text-teal-600 focus:outline-none focus:ring active:text-teal-500"
 
             >
@@ -55,7 +57,7 @@ const Service = ({ service }) => {
                 <span class="text-sm font-medium transition-all group-hover:ml-4">
                     Details
                 </span>
-            </a>
+            </Link>
         </div>
     );
 };

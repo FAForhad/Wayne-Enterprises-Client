@@ -7,7 +7,7 @@ const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const { user } = useContext(Authcontext);
-    console.log(user)
+    console.log(user?.photoURL)
     return (
 
         <div className='' style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
@@ -75,6 +75,12 @@ const Navigation = () => {
                                 Sign In
                             </Link>
                         </li>
+                        <li>
+                            <div>
+                                <img className="self-center flex-shrink-0 w-12 h-12 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src={user?.photoURL} alt={user?.displayName} />
+                            </div>
+                        </li>
+
                     </ul>
                     <div className="lg:hidden">
                         <button

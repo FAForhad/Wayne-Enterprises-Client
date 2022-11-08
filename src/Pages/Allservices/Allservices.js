@@ -9,7 +9,6 @@ const Allservices = () => {
         fetch('http://localhost:5000/allservices')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setAllServices(data)
             })
     }, [])
