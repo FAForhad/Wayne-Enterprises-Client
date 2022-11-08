@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Error from '../../Layouts/Error/error';
 import Main from '../../Layouts/Main/Main';
+import Addservices from '../../Pages/AddServices/Addservices';
 import Allservices from '../../Pages/Allservices/Allservices';
 import Detailspage from '../../Pages/DetailsPgae/Detailspage';
 import Home from '../../Pages/Home/Home';
@@ -21,7 +22,7 @@ const Routes = () => {
                 },
                 {
                     path: '/services',
-                    element: <PrivateRoute> <Allservices></Allservices></PrivateRoute>
+                    element: <Allservices></Allservices>
                 },
                 {
                     path: '/signin',
@@ -30,6 +31,10 @@ const Routes = () => {
                 {
                     path: 'signup',
                     element: <Signup></Signup>
+                },
+                {
+                    path: '/addServices',
+                    element: <PrivateRoute><Addservices></Addservices></PrivateRoute>
                 },
                 {
                     path: 'services/:id',

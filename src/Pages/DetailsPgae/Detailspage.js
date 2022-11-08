@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiTwotoneStar } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
+import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
+import Review from './Review/Review';
 
 const Detailspage = () => {
+    const { user } = useContext(Authcontext)
     const details = useLoaderData()
     console.log(details)
     const { description, name, picture, price, rating } = details
@@ -73,9 +76,14 @@ const Detailspage = () => {
                         </div>
                     </div>
                 </div>
-                <div className=" w-full h-full lg:w-2/5" style={{ backgroundImage: `${details.picture}` }}>
-
+                <div className="w-full h-full lg:w-2/5 bg-slate-100" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
+                    <div className='my-auto'>
+                        <h1 className=''>Please login to review</h1>
+                    </div>
                 </div>
+            </section>
+            <section >
+                <Review></Review>
             </section>
 
         </div>
@@ -83,3 +91,5 @@ const Detailspage = () => {
 };
 
 export default Detailspage;
+
+

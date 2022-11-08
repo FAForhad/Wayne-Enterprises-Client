@@ -3,7 +3,7 @@ import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 import BarLoader from "react-spinners/BarLoader";
 import { Navigate, useLocation } from 'react-router-dom';
 
-const PrivateRoute = ({ children }) => {
+export const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(Authcontext);
     const location = useLocation()
     if (loading) {

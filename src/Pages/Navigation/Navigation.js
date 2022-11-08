@@ -50,6 +50,16 @@ const Navigation = () => {
                                 Blogs
                             </Link>
                         </li>
+                        <li>
+                            <Link
+                                to="/addServices"
+                                aria-label="Our product"
+                                title="Our product"
+                                className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
+                            >
+                                Add Service
+                            </Link>
+                        </li>
                         {
                             !user?.uid ?
 
@@ -77,6 +87,16 @@ const Navigation = () => {
                                 </>
                                 :
                                 <>
+                                    <li>
+                                        <Link
+                                            to="/myreviews"
+                                            aria-label="Our product"
+                                            title="Our product"
+                                            className="font-medium tracking-wide text-teal-400 hover:text-teal-700 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            My Reviews
+                                        </Link>
+                                    </li>
                                     <li>
                                         <button
                                             onClick={handleSignout}
