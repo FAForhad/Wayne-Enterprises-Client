@@ -1,21 +1,24 @@
 import React from 'react';
 import { AiTwotoneStar } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Service = ({ service }) => {
     const { _id, name, picture, price, rating, description } = service
+    console.log(_id)
     return (
 
         <div className="mb-12 lg:mb-0">
-            <div className="shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover mb-6 rounded-bl-3xl rounded-tr-3xl"
-                style={{ backgroundPosition: '50%' }} data-mdb-ripple="true" data-mdb-ripple-color="dark">
-                <img src={picture} className="w-full h-64  rounded-bl-3xl rounded-tr-3xl" />
-                <a href="#!">
-                    <div
-                        className="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-                        style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}></div>
-                </a>
-            </div>
+            <PhotoProvider speed={() => 800}
+                easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
+            >
+                <div className="shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover mb-6 rounded-bl-3xl rounded-tr-3xl"
+                    style={{ backgroundPosition: '50%' }} data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <PhotoView src={picture}>
+                        <img src={picture} className="w-full h-64" />
+                    </PhotoView>
+                </div>
+            </PhotoProvider>
             <h5 className="text-lg text-teal-500 font-bold mb-3">{name}</h5>
             <div className="mb-3 text-red-600 font-medium text-sm flex items-center justify-center lg:justify-start">
                 <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">

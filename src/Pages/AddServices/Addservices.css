@@ -1,4 +1,6 @@
 .background-image {
-    background-image: url('https://img.freepik.com/free-photo/man-analyzing-stock-market-charts-financial-data-electronic-board_169016-14897.jpg?w=1380&t=st=1667928013~exp=1667928613~hmac=1c42ec65ae424d3711207b29351bb1c5561c2714461473a3c0362b11aba8cf93');
+    background: fixed;
+    opacity: 80%;
+    background-image: url('https://img.freepik.com/free-photo/green-slate_1205-377.jpg?1&w=1380&t=st=1667979697~exp=1667980297~hmac=18a8d08f46082f96ce60e119608f332f49176f53da8a6d6d3b8be6108cc6f616');
     background-size: cover;
 }

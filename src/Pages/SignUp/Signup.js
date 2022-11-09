@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { SlSocialGoogle } from 'react-icons/sl';
+import '../AddServices/Addservices.css'
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
@@ -185,7 +186,7 @@ const Signup = () => {
                     </div>
                 </div>
 
-                <div className="relative hidden lg:block md:hdden h-64 w-full sm:h-96 lg:h-full lg:w-2/3" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)', zIndex: '10' }}>
+                <div className="background-image relative hidden lg:block md:hdden h-64 w-full sm:h-96 lg:h-full lg:w-2/3">
                     <div className=" map-container absolute md:top-56 md:left-52 lg:top-56 lg:left-72">
                         <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/92809"></iframe>
                     </div>

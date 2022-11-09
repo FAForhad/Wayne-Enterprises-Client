@@ -3,12 +3,13 @@ import { AiTwotoneStar } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 import Review from './Review/Review';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Detailspage = () => {
     const { user } = useContext(Authcontext)
     const details = useLoaderData()
     console.log(details)
-    const { description, name, picture, price, rating } = details
+    const { _id, description, name, picture, price, rating } = details
 
     return (
         <div>
@@ -51,13 +52,19 @@ const Detailspage = () => {
                                 </h2>
 
                             </div>
-                            <div className="mb-4 transition-shadow duration-300 hover:shadow-xl lg:mb-6 " data-mdb-ripple="true" data-mdb-ripple-color="light">
-                                <img
-                                    className="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
-                                    src={picture}
-                                    alt=""
-                                />
-                            </div>
+                            <PhotoProvider speed={() => 800}
+                                easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
+                            >
+                                <div className="mb-4 transition-shadow duration-300 hover:shadow-xl lg:mb-6 " data-mdb-ripple="true" data-mdb-ripple-color="light">
+                                    <PhotoView src={picture}>
+                                        <img
+                                            className="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
+                                            src={picture}
+                                            alt=""
+                                        />
+                                    </PhotoView>
+                                </div>
+                            </PhotoProvider>
                             <div className='flex items-center justify-between'>
                                 <div className="mb-3 text-red-600 font-medium text-lg flex items-center justify-center lg:justify-start">
                                     <p>Rating : </p>
@@ -83,7 +90,7 @@ const Detailspage = () => {
                 </div>
             </section>
             <section >
-                <Review></Review>
+                <Review key={_id} _id={_id}></Review>
             </section>
 
         </div>

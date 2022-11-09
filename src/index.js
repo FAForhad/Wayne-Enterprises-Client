@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import 'tw-elements';
+import 'react-photo-view/dist/react-photo-view.css';
 import reportWebVitals from './reportWebVitals';
 import Usercontexts from './Contexts/Usercontexts/Usercontexts';
 

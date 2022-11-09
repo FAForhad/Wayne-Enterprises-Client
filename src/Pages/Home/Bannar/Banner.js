@@ -104,9 +104,7 @@ const Banner = () => {
                                         <div className="lg:pl-12">
                                             <h2 className="lg:text-6xl md:text-4xl text-4xl font-bold mb-6 text-gray-300"> Your Personal <span className='lg:text-8xl md:text-7xl text-teal-400 text-5xl '> Business Coach</span> </h2>
                                             <p className="mb-6 pb-2 lg:pb-0">
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, sint, repellat
-                                                vel quo quisquam accusamus in qui at ipsa enim quibusdam illo laboriosam omnis.
-                                                Labore itaque illum distinctio eum neque!
+                                                Complement your educational training with practical work experience and professional mentoring
                                             </p>
 
                                             <div className="flex flex-col md:flex-row md:justify-around xl:justify-start mb-6 mx-auto">
