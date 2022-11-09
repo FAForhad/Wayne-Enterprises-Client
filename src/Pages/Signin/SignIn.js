@@ -8,7 +8,6 @@ import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 const SignIn = () => {
     const [errors, setError] = useState('')
     const { signInUser, googleLogin } = useContext(Authcontext)
-    console.log(signInUser, googleLogin)
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -18,7 +17,6 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         const from = location?.state?.from?.pathname || '/'
-        console.log(email, password)
         signInUser(email, password)
             .then(result => {
                 const user = result.user;

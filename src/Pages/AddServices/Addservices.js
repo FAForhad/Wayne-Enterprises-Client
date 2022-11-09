@@ -19,7 +19,8 @@ const Addservices = () => {
             rating: rating,
             price: price,
             name: name,
-            description: description
+            description: description,
+            time: Date.now()
         }
 
         fetch('http://localhost:5000/services', {

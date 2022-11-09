@@ -5,7 +5,6 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Service = ({ service }) => {
     const { _id, name, picture, price, rating, description } = service
-    console.log(_id)
     return (
 
         <div className="mb-12 lg:mb-0">

@@ -7,7 +7,6 @@ import toast from 'react-hot-toast';
 const MyReviews = () => {
     const [reviews, setReviews] = useState([])
     const { user, loading } = useContext(Authcontext);
-    console.log(user.email)
 
     useEffect(() => {
         fetch(`http://localhost:5000/myreviews?email=${user.email}`)
@@ -27,7 +26,6 @@ const MyReviews = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.deletedCount > 0) {
                         toast.success('Deleted Successfully')
                         const remaining = reviews.filter(review => review._id !== id);
