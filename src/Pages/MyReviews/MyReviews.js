@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 import MySingleReview from './MySingleReview';
+import GridLoader from "react-spinners/GridLoader";
+import toast from 'react-hot-toast';
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([])
-    const { user } = useContext(Authcontext);
+    const { user, loading } = useContext(Authcontext);
     console.log(user.email)
 
     useEffect(() => {
@@ -15,6 +17,26 @@ const MyReviews = () => {
             })
 
     }, [user?.email])
+
+
+    const handleDeleteReview = (id) => {
+        const confirm = window.confirm('Are you sure, you want to delete this review??')
+        if (confirm) {
+            fetch(`http://localhost:5000/myreviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        toast.success('Deleted Successfully')
+                        const remaining = reviews.filter(review => review._id !== id);
+                        setReviews(remaining);
+                    }
+                })
+        }
+
+    }
 
     return (
         <div>
@@ -60,9 +82,25 @@ const MyReviews = () => {
                         </p>
                     </div>
                     <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
                         {
-                            reviews.map(review => <MySingleReview key={review._id} review={review}></MySingleReview>)
+                            loading ? <GridLoader
+                                color="#36d7b7"
+                                className='mx-auto my-auto min-h-screen'
+                                size={30}
+                                speedMultiplier={2} />
+
+                                :
+                                <>
+                                    {
+                                        reviews.length < 1 ? <p className='text-teal-300 text-center col-span-3 text-5xl md:text-6xl lg:text-8xl'>NO REVIEW ARE ADDED</p> :
+                                            <>
+                                                {
+                                                    reviews.map(review => <MySingleReview key={review._id} handleDeleteReview={handleDeleteReview} review={review}></MySingleReview>)
+
+                                                }
+                                            </>
+                                    }
+                                </>
                         }
                     </div>
 

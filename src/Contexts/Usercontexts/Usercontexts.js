@@ -44,7 +44,8 @@ const Usercontexts = ({ children }) => {
         googleLogin,
         signInUser,
         logout,
-        loading
+        loading,
+        setLoading
 
     }
 

@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Service from '../Home/Service/Service';
+import GridLoader from "react-spinners/GridLoader";
+import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 
 const Allservices = () => {
-
+    const { loading, setLoading } = useContext(Authcontext)
     const [allServices, setAllServices] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:5000/allservices')
             .then(res => res.json())
             .then(data => {
+                setLoading(false)
                 setAllServices(data)
-            })
+            }, 3000)
     }, [])
     return (
         <div className="container my-24 px-6 mx-auto">
@@ -20,9 +23,22 @@ const Allservices = () => {
 
                 <div className="grid lg:grid-cols-3 gap-x-6 gap-y-12">
                     {
-                        allServices.map(service => <Service key={service._id} service={service}></Service>)
-                    }
+                        allServices.length < 1 || loading ? <GridLoader
+                            color="#36d7b7"
+                            className='mx-auto'
+                            size={30}
+                            speedMultiplier={.5}
 
+                        />
+                            :
+                            <>
+                                {
+                                    allServices.map(service => <Service key={service._id} service={service}></Service>)
+                                }
+                            </>
+
+
+                    }
                 </div>
             </section>
 

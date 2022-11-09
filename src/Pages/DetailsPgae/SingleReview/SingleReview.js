@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { BarLoader } from 'react-spinners';
+import { Authcontext } from '../../../Contexts/Usercontexts/Usercontexts';
 
 const SingleReview = ({ review }) => {
-    const { ratings, picture, name, email, description } = review
+    const { loading } = useContext(Authcontext)
+    if (loading) {
+        <BarLoader></BarLoader>
+    }
+    const { ratings, picture, name, description } = review
     return (
         <div>
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
@@ -12,7 +18,6 @@ const SingleReview = ({ review }) => {
                         </div>
                         <div>
                             <h4 className="font-bold">{name}</h4>
-                            <span className="text-xs dark:text-gray-400">{email}</span>
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 dark:text-yellow-500">

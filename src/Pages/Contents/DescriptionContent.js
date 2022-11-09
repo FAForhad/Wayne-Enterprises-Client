@@ -11,7 +11,7 @@ const DescriptionContent = () => {
                             <h2 className="font-sans text-start text-3xl font-bold tracking-tight text-teal-400 sm:text-4xl sm:leading-none">
                                 Mentored Practical Experience
                                 <br className="hidden md:block" />
-                                Designed to help strengthen your
+                                Designed to help strengthen your <br />
                                 <span className="inline-block text-teal-400">
                                     professional judgement
                                 </span>

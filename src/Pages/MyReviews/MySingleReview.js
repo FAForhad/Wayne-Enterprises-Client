@@ -1,8 +1,9 @@
 import React from 'react';
 import { AiTwotoneStar } from 'react-icons/ai';
 
-const MySingleReview = ({ review }) => {
-    const { email, name, serviceName, ratings, picture, description } = review;
+const MySingleReview = ({ review, handleDeleteReview }) => {
+    const { _id, name, serviceName, ratings, picture, description } = review;
+
     return (
         <div>
             <div className="max-w-md p-6 overflow-hidden rounded-lg shadow  dark:text-gray-100" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
@@ -42,7 +43,7 @@ const MySingleReview = ({ review }) => {
                             </div>
                             <div className='mt-7'>
                                 <button
-                                    to='/services'
+                                    onClick={() => handleDeleteReview(_id)}
                                     className="group relative inline-block overflow-hidden border rounded-sm border-teal-600 px-3 py-1 focus:outline-none focus:ring"
 
                                 >

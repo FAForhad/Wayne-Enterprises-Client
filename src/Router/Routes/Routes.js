@@ -4,6 +4,7 @@ import Error from '../../Layouts/Error/error';
 import Main from '../../Layouts/Main/Main';
 import Addservices from '../../Pages/AddServices/Addservices';
 import Allservices from '../../Pages/Allservices/Allservices';
+import { Blogs } from '../../Pages/Blogs/Blogs';
 import Detailspage from '../../Pages/DetailsPgae/Detailspage';
 import Home from '../../Pages/Home/Home';
 import MyReviews from '../../Pages/MyReviews/MyReviews';
@@ -34,17 +35,21 @@ const Routes = () => {
                     element: <Signup></Signup>
                 },
                 {
-                    path: '/addServices',
-                    element: <PrivateRoute><Addservices></Addservices></PrivateRoute>
-                },
-                {
                     path: 'services/:id',
                     element: <Detailspage></Detailspage>,
                     loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
                 },
                 {
+                    path: '/addServices',
+                    element: <PrivateRoute><Addservices></Addservices></PrivateRoute>
+                },
+                {
                     path: '/myreviews',
                     element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+                },
+                {
+                    path: 'blogs',
+                    element: <Blogs></Blogs>
                 }
             ]
         },
