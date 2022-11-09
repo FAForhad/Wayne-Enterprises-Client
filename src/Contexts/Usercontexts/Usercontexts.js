@@ -33,6 +33,7 @@ const Usercontexts = ({ children }) => {
     }
 
     const logout = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
@@ -49,7 +50,9 @@ const Usercontexts = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+
             setUser(currentUser)
+
             setLoading(false)
 
         })

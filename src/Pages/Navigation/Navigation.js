@@ -7,7 +7,6 @@ const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const { user, logout } = useContext(Authcontext);
-    console.log(user)
     const handleSignout = () => {
         logout()
             .then(() => { })

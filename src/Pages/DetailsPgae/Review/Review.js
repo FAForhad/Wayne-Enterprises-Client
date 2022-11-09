@@ -1,13 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Authcontext } from '../../../Contexts/Usercontexts/Usercontexts';
+import React, { useEffect, useState } from 'react';
 import SingleReview from '../SingleReview/SingleReview';
 import './Review.css'
 
 
 const Review = ({ _id }) => {
-    const { user } = useContext(Authcontext);
-
-
     const [reviews, setReviews] = useState([])
 
 

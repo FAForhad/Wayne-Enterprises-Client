@@ -6,6 +6,7 @@ import Addservices from '../../Pages/AddServices/Addservices';
 import Allservices from '../../Pages/Allservices/Allservices';
 import Detailspage from '../../Pages/DetailsPgae/Detailspage';
 import Home from '../../Pages/Home/Home';
+import MyReviews from '../../Pages/MyReviews/MyReviews';
 import SignIn from '../../Pages/Signin/SignIn';
 import Signup from '../../Pages/SignUp/Signup';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
@@ -40,6 +41,10 @@ const Routes = () => {
                     path: 'services/:id',
                     element: <Detailspage></Detailspage>,
                     loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                {
+                    path: '/myreviews',
+                    element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
                 }
             ]
         },

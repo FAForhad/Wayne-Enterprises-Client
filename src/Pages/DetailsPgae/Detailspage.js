@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 import Review from './Review/Review';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import Addreview from './AddReview/Addreview';
 
 const Detailspage = () => {
     const { user } = useContext(Authcontext)
@@ -85,7 +86,7 @@ const Detailspage = () => {
                 </div>
                 <div className="w-full h-full lg:w-2/5 bg-slate-100" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
                     <div className='my-auto'>
-                        <h1 className=''>Please login to review</h1>
+                        <Addreview></Addreview>
                     </div>
                 </div>
             </section>
