@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiTwotoneStar } from 'react-icons/ai';
 
-const MySingleReview = ({ review, handleDeleteReview }) => {
+const MySingleReview = ({ review, handleDeleteReview, handleUpdateReview }) => {
     const { _id, name, serviceName, ratings, picture, description } = review;
 
     return (
@@ -26,7 +26,7 @@ const MySingleReview = ({ review, handleDeleteReview }) => {
                         <div className='flex gap-2'>
                             <div className='mt-7 '>
                                 <button
-                                    to='/services'
+                                    onClick={() => handleUpdateReview(_id)}
                                     className="group relative inline-block overflow-hidden border rounded-sm border-teal-600 px-5 py-1 focus:outline-none focus:ring"
 
                                 >

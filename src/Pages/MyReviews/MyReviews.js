@@ -12,7 +12,7 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user.email}`, {
+        fetch(`https://wayne-enterprises-server.vercel.app/myreviews?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('ReviewToken')}`
             }
@@ -30,10 +30,38 @@ const MyReviews = () => {
     }, [user?.email])
 
 
+    const handleUpdateReview = (id) => {
+        const proceed = window.confirm('Do you want to update youe review?')
+        if (proceed) {
+            const prompt = window.prompt('upadte please')
+
+
+            fetch(`https://wayne-enterprises-server.vercel.app/myreviews/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ status: prompt })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.modifiedCount > 0) {
+                        const remaining = reviews.filter(review => review._id !== id);
+                        const approving = reviews.find(review => review._id === id);
+                        toast.success('approved successfully')
+                        const newReviews = [approving, ...remaining];
+                        setReviews(newReviews)
+                    }
+                })
+        }
+    }
+
+
     const handleDeleteReview = (id) => {
         const confirm = window.confirm('Are you sure, you want to delete this review??')
         if (confirm) {
-            fetch(`http://localhost:5000/myreviews/${id}`, {
+            fetch(`https://wayne-enterprises-server.vercel.app/myreviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -105,7 +133,7 @@ const MyReviews = () => {
                                         reviews.length < 1 ? <p className='text-teal-300 text-center col-span-3 text-5xl md:text-6xl lg:text-8xl'>NO REVIEW ARE ADDED</p> :
                                             <>
                                                 {
-                                                    reviews.map(review => <MySingleReview key={review._id} handleDeleteReview={handleDeleteReview} review={review}></MySingleReview>)
+                                                    reviews.map(review => <MySingleReview key={review._id} handleDeleteReview={handleDeleteReview} handleUpdateReview={handleUpdateReview} review={review}></MySingleReview>)
 
                                                 }
                                             </>
@@ -113,8 +141,6 @@ const MyReviews = () => {
                                 </>
                         }
                     </div>
-
-
                 </div>
             </div>
         </div>

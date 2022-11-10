@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Wayne 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A chartered accountant who provides his service's for growing someone's or any companies desired needed.
 
-## Available Scripts
+Many types of service's he can techs.
 
-In the project directory, you can run:
+# Live link : 'https://wayne-enterprises-clien.firebaseapp.com/'
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Works
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation 
+- react
+- firebase
+- tailwind
+- tailwind-elements
+- react-router-dom
+- react-hot-toast
+- react-icons
+- react-photo-view
+- react-spinners
 
-### `npm test`
+I Used react framework for comfortable and easy to understand the code's, I used firebase  for authentication, tailwind for quicker handled css and for better ui design,used  component library like tailwind elements, For better user experiance i used react-hot-toast, react-icons,react-spinner. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this website you can see the Service's . 9 service's are available.in home page I showed 3 services.if you clicked the view all button you will redirect to all service route and there will be 9 service's for you. After clicking the details button you will see the the details of the Service's. In the service image if you clicked it will be show as a big image. On this details rout You can see the Service's and you can see the review of specific service. If you interested to drop a review for any of your desire service then you have to logged in first.if you are logged in you can add service. You can see your specific reviews have you reviewed before. After logged in you can also add service. You can logged in with your email and password and google also.
 
-### `npm run build`
+I fetched data form mongodb. The data's of services and review I stored in mongodb.
+All interactions of service and review are intercalated form mongodb.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## login Methods
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Email , password
+- google
 
-### `npm run eject`
+## Service's
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Statutory audit
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Tax consultant
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Accounts Advisor 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Corporate Governance
 
-## Learn More
+- Projects Profile
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Internal audit
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Account's investigation
 
-### Code Splitting
+- Assets Valuation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Inventory Count's
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###

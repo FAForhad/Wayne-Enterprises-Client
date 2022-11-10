@@ -29,7 +29,7 @@ const Addreview = ({ details }) => {
             time: Date.now()
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://wayne-enterprises-server.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

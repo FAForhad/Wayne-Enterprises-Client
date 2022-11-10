@@ -37,7 +37,7 @@ const Routes = () => {
                 {
                     path: 'services/:id',
                     element: <Detailspage></Detailspage>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({ params }) => fetch(`https://wayne-enterprises-server.vercel.app/services/${params.id}`)
                 },
                 {
                     path: '/addServices',

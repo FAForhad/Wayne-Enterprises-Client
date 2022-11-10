@@ -10,7 +10,7 @@ const Allservices = () => {
     const [allServices, setAllServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allservices')
+        fetch('https://wayne-enterprises-server.vercel.app/allservices')
             .then(res => res.json())
             .then(data => {
                 setLoading(false)
