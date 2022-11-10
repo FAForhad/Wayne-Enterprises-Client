@@ -14,6 +14,7 @@ const Signup = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
+    //  sign up functionality
     const handleSignUp = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -48,6 +49,8 @@ const Signup = () => {
             })
     }
 
+
+    //  update user functionality
     const handleupdateUser = (name, picture) => {
         const profile = {
             displayName: name,
@@ -58,7 +61,7 @@ const Signup = () => {
             .catch(error => console.log(error))
     }
 
-
+    //  sign in functionality with google
     const handleGoogleLogin = () => {
         const from = location?.state?.from?.pathname || '/'
         googleLogin()

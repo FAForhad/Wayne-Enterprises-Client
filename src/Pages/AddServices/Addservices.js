@@ -6,6 +6,8 @@ import './Addservices.css'
 
 const Addservices = () => {
     useTitle('Add service')
+
+    //  For Add a service
     const handleAddService = (event) => {
         event.preventDefault()
         const form = event.target;

@@ -27,6 +27,11 @@ In this website you can see the Service's . 9 service's are available.in home pa
 I fetched data form mongodb. The data's of services and review I stored in mongodb.
 All interactions of service and review are intercalated form mongodb.
 
+- I have used CURD operation for data load
+- I installed Many react library for work faster and smoother
+- I used firebase for Authentication
+- I used local storage to save the JWT token for the client who will visit this website and who needs his data's
+- I Created many components for the reviewer to understand my code's
 
 ## login Methods
 

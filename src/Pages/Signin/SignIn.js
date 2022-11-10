@@ -14,6 +14,8 @@ const SignIn = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
+
+    //  sign in functionality
     const handleSignIn = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -46,7 +48,7 @@ const SignIn = () => {
             })
     }
 
-
+    //  sign in functionality with google
     const handleGoogleSignin = () => {
         const from = location?.state?.from?.pathname || '/'
         googleLogin()

@@ -4,6 +4,8 @@ import useTitle from '../../Hook/useTitle';
 
 const Error = () => {
     useTitle('Error')
+
+    // error page
     return (
         <div>
 

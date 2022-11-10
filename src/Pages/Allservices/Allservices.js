@@ -9,6 +9,8 @@ const Allservices = () => {
     const { loading, setLoading } = useContext(Authcontext)
     const [allServices, setAllServices] = useState([])
 
+
+    // Showing All the services
     useEffect(() => {
         fetch('https://wayne-enterprises-server.vercel.app/allservices')
             .then(res => res.json())

@@ -31,9 +31,9 @@ const MyReviews = () => {
 
 
     const handleUpdateReview = (id) => {
-        const proceed = window.confirm('Do you want to update youe review?')
+        const proceed = window.confirm('Do you want to update your review ?')
         if (proceed) {
-            const prompt = window.prompt('upadte please')
+            const prompt = window.prompt('Review update please')
 
 
             fetch(`https://wayne-enterprises-server.vercel.app/myreviews/${id}`, {
