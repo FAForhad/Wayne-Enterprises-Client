@@ -5,8 +5,10 @@ import ExperianceContent from '../Contents/ExperianceContent';
 import Banner from './Bannar/Banner';
 import ShortServices from './ShortServices/ShortServices';
 import GridLoader from "react-spinners/GridLoader";
+import useTitle from '../../Hook/useTitle';
 
 const Home = () => {
+    useTitle('Home')
     const { loading } = useContext(Authcontext)
     return (
         <div>

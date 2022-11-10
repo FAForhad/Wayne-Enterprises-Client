@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import Service from '../Home/Service/Service';
 import GridLoader from "react-spinners/GridLoader";
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
+import useTitle from '../../Hook/useTitle';
 
 const Allservices = () => {
+    useTitle('All services')
     const { loading, setLoading } = useContext(Authcontext)
     const [allServices, setAllServices] = useState([])
 

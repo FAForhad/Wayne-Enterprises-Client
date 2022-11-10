@@ -5,8 +5,10 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 import { setAuthToken } from '../../Api/Auth';
+import useTitle from '../../Hook/useTitle';
 
 const Signup = () => {
+    useTitle('Sign up')
     const [error, setError] = useState('')
     const { register, updateUserProfile, googleLogin } = useContext(Authcontext)
     const location = useLocation()

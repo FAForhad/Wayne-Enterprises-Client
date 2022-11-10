@@ -6,8 +6,10 @@ import Review from './Review/Review';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Addreview from './AddReview/Addreview';
 import SignIntoAddReview from './AddReview/SignIntoAddReview';
+import useTitle from '../../Hook/useTitle';
 
 const Detailspage = () => {
+    useTitle('All services - Details')
     const { user } = useContext(Authcontext)
     const details = useLoaderData()
 

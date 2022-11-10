@@ -3,8 +3,10 @@ import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
 import MySingleReview from './MySingleReview';
 import GridLoader from "react-spinners/GridLoader";
 import toast from 'react-hot-toast';
+import useTitle from '../../Hook/useTitle';
 
 const MyReviews = () => {
+    useTitle('My reviews')
     const [reviews, setReviews] = useState([])
     const { user, loading, logout } = useContext(Authcontext);
 

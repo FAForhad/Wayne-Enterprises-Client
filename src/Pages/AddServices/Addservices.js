@@ -1,10 +1,11 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 import { SlChart } from "react-icons/sl";
+import useTitle from '../../Hook/useTitle';
 import './Addservices.css'
 
 const Addservices = () => {
-
+    useTitle('Add service')
     const handleAddService = (event) => {
         event.preventDefault()
         const form = event.target;
