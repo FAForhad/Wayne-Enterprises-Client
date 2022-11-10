@@ -6,11 +6,21 @@ import toast from 'react-hot-toast';
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([])
-    const { user, loading } = useContext(Authcontext);
+    const { user, loading, logout } = useContext(Authcontext);
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/myreviews?email=${user.email}`, {
+            headers: {
+                authorization: `bearer ${localStorage.getItem('ReviewToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 403 || res.status === 401) {
+                    logout()
+                }
+                return res.json()
+            })
             .then(data => {
                 setReviews(data)
             })

@@ -4,6 +4,7 @@ import '../AddServices/Addservices.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Authcontext } from '../../Contexts/Usercontexts/Usercontexts';
+import { setAuthToken } from '../../Api/Auth';
 
 const SignIn = () => {
     const [errors, setError] = useState('')
@@ -21,9 +22,10 @@ const SignIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                setAuthToken(user)
+
                 form.reset()
                 setError('')
-
                 toast.success('Successfully Sign In!', {
                     style: {
                         border: '1px solid #713200',
@@ -49,6 +51,7 @@ const SignIn = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                setAuthToken(user)
                 navigate(from, { replace: true } || '/')
                 toast.success('Login Successful')
             })
