@@ -6,7 +6,9 @@ const MySingleReview = ({ review, handleDeleteReview, handleUpdateReview }) => {
 
     return (
         <div>
-            <div className="max-w-md p-6 overflow-hidden rounded-lg shadow  dark:text-gray-100" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }}>
+            <div className="max-w-md p-6 overflow-hidden rounded-lg shadow  dark:text-gray-100" style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)' }} data-aos="zoom-in-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="500">
                 <article>
                     <h2 className="text-xl font-bold">{serviceName}</h2>
                     <p className="mt-4 dark:text-gray-400">{description?.length > 150 ? description.slice(0, 150) + '...' : description}</p>

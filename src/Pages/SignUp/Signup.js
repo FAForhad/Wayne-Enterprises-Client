@@ -195,7 +195,8 @@ const Signup = () => {
                 </div>
 
                 <div className="background-image relative hidden lg:block md:hdden h-64 w-full sm:h-96 lg:h-full lg:w-2/3">
-                    <div className=" map-container absolute md:top-56 md:left-52 lg:top-56 lg:left-72">
+                    <div className=" map-container absolute md:top-56 md:left-52 lg:top-56 lg:left-72" data-aos="zoom-in-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1000">
                         <iframe background="transparent" speed="1" style={{ width: '500px', height: '500px' }} src="https://embed.lottiefiles.com/animation/92809"></iframe>
                     </div>
 

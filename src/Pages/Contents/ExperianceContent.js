@@ -15,6 +15,8 @@ const ExperianceContent = () => {
                                 <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
                                     <div className="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
                                         style={{ backgroundColor: 'hsla(181, 100%, 7%, 1)', backdropFilter: 'blur(30px)', zIndex: '1' }}
+                                        data-aos="zoom-in-left" data-aos-easing="ease-out-cubic"
+                                        data-aos-duration="1000"
 
                                     >
                                         <h2 className="text-5xl font-bold mb-2 text-teal-300">EXPERIENCE</h2>
@@ -95,7 +97,8 @@ const ExperianceContent = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="md:mb-12 lg:mb-0">
+                                <div className="md:mb-12 lg:mb-0" data-aos="zoom-in-right" data-aos-easing="ease-out-cubic"
+                                    data-aos-duration="1000">
                                     <img src="https://img.freepik.com/free-photo/business-concept-portrait-handsome-serious-business-man-suit-looking-work-laptop-white-background_1258-103931.jpg?w=740&t=st=1667973825~exp=1667974425~hmac=b7663c677599baabbbea4fc98fe4a97f4587aadd34f049148f311d53c9f1bf13"
                                         className="w-full rounded-lg shadow-lg rotate-lg-6" alt="" />
                                 </div>

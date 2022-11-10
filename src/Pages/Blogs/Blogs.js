@@ -13,7 +13,9 @@ export const Blogs = () => {
 
                 </div>
                 <div className="">
-                    <div className="max-w-md my-5 text-start">
+                    <div className="max-w-md my-5 text-start" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="500">
                         <h6 className="mb-2 font-semibold leading-5 text-2xl">Diffrent betweene SQL any NoSQl</h6>
                         <p className=" text-gray-500 text-md">
 
@@ -26,7 +28,9 @@ export const Blogs = () => {
 
                         </p>
                     </div>
-                    <div className="max-w-md text-start my-5">
+                    <div className="max-w-md text-start my-5" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1000">
                         <h6 className="mb-2 font-semibold leading-5 text-2xl">What is jwt? How dose it works</h6>
                         <p className=" text-gray-500 text-md">
 
@@ -35,7 +39,9 @@ export const Blogs = () => {
                             JWT differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.
                         </p>
                     </div>
-                    <div className="max-w-md text-start my-5">
+                    <div className="max-w-md text-start my-5" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="500">
                         <h6 className="mb-2 font-semibold leading-5 text-2xl">Diffrent between NOde js and JavaScript</h6>
                         <p className=" text-gray-500 text-md">
 
@@ -51,7 +57,9 @@ export const Blogs = () => {
 
                         </p>
                     </div>
-                    <div className="max-w-md text-start my-5">
+                    <div className="max-w-md text-start my-5" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1000">
                         <h6 className="mb-2 font-semibold leading-5 text-2xl">How dose Node js handle multiple request?</h6>
                         <p className="text-gray-500 text-md">
                             NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built an eventloop.NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. EventLoop is the listener for the EventQueue. When the synchronize call's are complete then it takes commend form Queue and executes
